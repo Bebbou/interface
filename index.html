@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./rel/styles/styles.css">
+    <title>Bebou / Profile</title>
+</head>
+<body>
+    <div class="background-layer"></div>
+    
+<div class="container">
+    <img src="./rel/img/bluelain.png" alt="Avatar" class="profile-img">
+    <h1>USER_ID: Lino_Volle</h1>
+    <p class="bio-text">> Bienvenue dans mon interface.</p>
+    <div class="links-group">
+        <a href="https://bebbou.github.io/portfolio/" class="link-card">PORTFOLIO <span>Realisations & Projects</span></a>
+        <a href="https://www.linkedin.com/in/lino-volle/" class="link-card">LINKEDIN <span>Professional Network</span></a>
+        <a href="https://www.instagram.com/lino.volle/" class="link-card">INSTAGRAM <span>Visual Feed</span></a>
+        <a class="link-card" onclick="copyDiscord()"> DISCORD <span id="discord-status">Click to copy username</span></a>
+        <a href="mailto:lino.volle.dev@gmail.com" class="link-card">EMAIL <span>Direct Contact</span></a>
+        <a href="./404.html" class="link-card">CURRICULUM VITAE <span>Ouaips...</span></a>
+        <a href="https://github.com/Bebbou" class="link-card">GITHUB <span>./rel/projects --all</span></a>
+    </div>
+</div>
+<div class="system-status">
+    <div class="status-item">USER: LINO_VOLLE</div>
+    <div class="status-item">ROLE: DEVELOPER</div>
+    <div class="status-item">LOC: FRANCE</div>
+    <div class="status-item">STATUS: <span class="blink">ONLINE</span></div>
+</div>
+</body>
+        <!-- ==================================== -->
+        <!-- ==================================== -->
+<script>
+        /* ----------------- */
+function copyDiscord() {
+    const username = "bebou.png";
+    navigator.clipboard.writeText(username);
+    const status = document.getElementById('discord-status');
+    status.innerText = "COPIED_TO_CLIPBOARD";
+    status.style.color = "#00ff00"; // SUCESS !
+    setTimeout(() => {
+        status.innerText = "Click to copy username";
+        status.style.color = "";
+    }, 2000);
+}
+        /* ----------------- */
+setInterval(() => {
+    const now = new Date();
+
+    console.log(`%c[LATENCY]: ${Math.random().toFixed(4)}ms`, "color: #555;");
+    console.log(`%c[CURRENT_TIME]: ${now.getHours()}:${now.getMinutes()}:${now.getSeconds()}`, "color: #ff0055; font-weight: bold;");
+console.log("%c [SYSTEM]: Continue de chercher. ", "color: #ff0055; background: #000; font-weight: bold; font-size: 20px;");
+}, 1000);
+        /* ----------------- */
+const originalTitle = document.title;
+window.onblur = () => { document.title = "Hé !"; };
+window.onfocus = () => { document.title = originalTitle; };
+        /* ----------------- */
+let hoverTimer;
+const profileImg = document.querySelector('.profile-img');
+profileImg.addEventListener('mouseenter', () => {
+    hoverTimer = setTimeout(() => {
+        console.log("%c[SCANNER]: Bien trouver, 5aQvYLdxNh", "color: #c1b492; font-style: italic;");
+    }, 3000);
+});
+profileImg.addEventListener('mouseleave', () => {
+    clearTimeout(hoverTimer);
+});
+        /* ----------------- */
+setInterval(() => {
+    document.body.style.transform = `translate(${Math.random() * 4 - 2}px, ${Math.random() * 4 - 2}px)`;
+    setTimeout(() => {
+        document.body.style.transform = "translate(0,0)";
+    }, 100);
+}, 20000);
+const links = document.querySelectorAll('.link-card');
+const chars = "†‡∆¬Ω≈µ∫√π01";
+
+links.forEach(link => {
+    const originalText = link.childNodes[0].textContent;
+    link.addEventListener('mouseenter', () => {
+        let iterations = 0;
+        const interval = setInterval(() => {
+            link.childNodes[0].textContent = originalText.split("")
+                .map((letter, index) => {
+                    if(index < iterations) return originalText[index];
+                    return chars[Math.floor(Math.random() * chars.length)];
+                }).join("");
+            
+            if(iterations >= originalText.length) clearInterval(interval);
+            iterations += 1/3;
+        }, 20);
+    });
+});
+</script>
+</html> 
