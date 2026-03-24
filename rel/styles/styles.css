@@ -96,7 +96,7 @@ h1 {
     border-color: var(--accent-color);
 }
 .link-card span {
-    font-size: 0.8rem;
+    font-size: 16px;
     display: block;
     margin-top: 4px;
     opacity: 0.6;
