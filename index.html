@@ -3,24 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./rel/styles/styles.css">
+    <meta name="description" content="LinkTree et liens de Lino Volle, Développeur/WebDesigner, SoftwareEngineer.">
+    <meta name="theme-color" content="#ff0055">
+    <link rel="stylesheet" href="./res/styles/styles.css">
     <title>Bebou / Profile</title>
 </head>
 <body>
     <div class="background-layer"></div>
     
 <div class="container">
-    <img src="./rel/img/bluelain.png" alt="Avatar" class="profile-img">
+    <img src="./res/img/bluelain.png" alt="Photo de profil de Lino Volle, Photo nommé Blue Lain, Personnage Principal de l'animé Serial Experiment Lain" class="profile-img">
     <h1>USER_ID: Lino_Volle</h1>
     <p class="bio-text">> Bienvenue dans mon interface.</p>
     <div class="links-group">
         <a href="https://bebbou.github.io/portfolio/" class="link-card">PORTFOLIO <span>Realisations & Projects</span></a>
         <a href="https://www.linkedin.com/in/lino-volle/" class="link-card">LINKEDIN <span>Professional Network</span></a>
         <a href="https://www.instagram.com/lino.volle/" class="link-card">INSTAGRAM <span>Visual Feed</span></a>
-        <a class="link-card" onclick="copyDiscord()"> DISCORD <span id="discord-status">Click to copy username</span></a>
+        <a class="link-card" tabindex="0" onclick="copyDiscord()"> DISCORD <span id="discord-status">Click to copy username</span></a>
         <a href="mailto:lino.volle.dev@gmail.com" class="link-card">EMAIL <span>Direct Contact</span></a>
-        <a href="./404.html" class="link-card">CURRICULUM VITAE <span>Ouaips...</span></a>
-        <a href="https://github.com/Bebbou" class="link-card">GITHUB <span>./rel/projects --all</span></a>
+        <a href="./cv.html" class="link-card">CURRICULUM VITAE <span>Ouaips...</span></a>
+        <a href="https://github.com/Bebbou" class="link-card">GITHUB <span>./res/projects --all</span></a>
     </div>
 </div>
 <div class="system-status">
@@ -29,6 +31,7 @@
     <div class="status-item">LOC: FRANCE</div>
     <div class="status-item">STATUS: <span class="blink">ONLINE</span></div>
 </div>
+
 </body>
         <!-- ==================================== -->
         <!-- ==================================== -->
@@ -94,5 +97,6 @@ links.forEach(link => {
         }, 20);
     });
 });
+
 </script>
 </html> 
